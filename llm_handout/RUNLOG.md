@@ -38,9 +38,25 @@ Results found:
 - We did this as the corpus mixes English and Hindi. And under pure byte level encoding, the Hindi text xonsumes fat more of the model's block size.
 - changing it to BPE would let the model see more actual text
 Results found:
-- Parameters: 142176
+- Parameters: 1421760
 - Final train loss: 2.9691
 - BPB: 2.2369
 - Time: 67 seconds
 
-## Experiment 5 
+## Experiment 5A (BPE vocab size=384)
+- checking if a smaller BPE apart from our standard 512 BPE is improving the LLM or not
+- retianed the BPE made in experiment 4. But generated a new bpe_merges.json file with bpe vocab size equal to 384
+Results found:
+- Parameters: 1380800
+- Final train loss: 2.7576
+- BPB: 2.2938
+- Time: 73 seconds
+
+## Experiment 5B (BPE vocab size=768)
+- checking if increasing the BPE count apart from our standard 512 bpe is improving the llm or not
+- retaiend the BPE made in experiment 4. generated a new bpe_merges.json with bpe vocab size equal to 786
+Results found:
+- Parameters: 1509440
+- Final train loss: 3.2471
+- BPB: 2.2238
+- Time: 69 seconds
