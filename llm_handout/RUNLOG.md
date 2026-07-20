@@ -52,7 +52,7 @@ Results found:
 - BPB: 2.2938
 - Time: 73 seconds
 
-## Experiment 5B (BPE vocab size=768)
+## Experiment 5B (BPE vocab size=786)
 - checking if increasing the BPE count apart from our standard 256 bpe is improving the llm or not
 - retaiend the BPE made in experiment 4. generated a new bpe_merges.json with bpe vocab size equal to 786
 Results found:

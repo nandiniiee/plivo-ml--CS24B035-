@@ -8,6 +8,7 @@
 - The final submitted model uses the vocabulary size that achieved the lowerst BPP on the development set
 - All experiments were conducted within the 2 million parameter limit and exactly 2000 optimizer steps.
 - The tokenizer was trained only on the provided training corpus as required.
+- The final submitted model uses the BPE vocabulary size that achieved the lowest BPB on the development set.
 - The final checkpoint corresponds to the configuration with the best development BPB.
 - The final submitted checkpoint (`ckpt.pt`) was verified using `evaluate.py` and achieved a BPB of 2.2238 with 1,509,440 parameters after 2000 training steps.
 
