@@ -60,3 +60,10 @@ Results found:
 - Final train loss: 3.2471
 - BPB: 2.2238
 - Time: 69 seconds
+
+## Final Selection
+The model from Experiment 5B was selected as the final submission because it achieved the lowest development BPB (2.2238) while satisfying all assignment constraints:
+- Parameters: 1,509,440 (< 2M)
+- Optimizer steps: 2000
+- CPU-only training and inference
+- No pretrained weights
