@@ -16,8 +16,8 @@ class Config:
     n_head = 4
     n_embd = 160
     dropout = 0.0
-    tie_weights = False   # <- one of many things worth questioning
-
+    tie_weights = True   # <- one of many things worth questioning
+    #changed tie_weights to true so that we can tie the embedding and the output matrices
 
 class SelfAttention(nn.Module):
     def __init__(self, cfg):
