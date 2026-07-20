@@ -57,21 +57,15 @@ def main():
     assert n <= MAX_PARAMS, f"cap: max {MAX_PARAMS:,} params"
 
     # baseline choices, all questionable on purpose:
-    #----CHANGE MADE HERE BY ME---
-    #changing the optimizer from Adam to AdamW to handle weight decay
+    #opt = torch.optim.Adam(model.parameters(), lr=args.lr)  # constant LR,
+    
+    #changing the optimizer here to AdamW
     opt = torch.optim.AdamW(
     model.parameters(),
     lr=args.lr,
     betas=(0.9, 0.95),
-    weight_decay=0.1,
+    weight_decay=0.01,
     )
-
-    #adding a scheduler
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-    opt,
-    T_max=args.steps,
-    )
-
     # no warmup, no schedule, no weight decay, no gradient clipping.
 
     model.train()
@@ -82,14 +76,7 @@ def main():
         _, loss = model(x, y)
         opt.zero_grad(set_to_none=True)
         loss.backward()
-        # adding gradient clipping here
-        torch.nn.utils.clip_grad_norm(
-            model.parameters(),
-            1.0,
-        )
         opt.step()
-        #adding scheduler here also
-        scheduler.step()
         losses.append(loss.item())
         if step % args.log_every == 0 or step == 1:
             avg = sum(losses[-args.log_every:]) / len(losses[-args.log_every:])
