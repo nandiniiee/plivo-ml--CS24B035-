@@ -83,7 +83,10 @@ def main():
         opt.zero_grad(set_to_none=True)
         loss.backward()
         # adding gradient clipping here
-        
+        torch.nn.utils.clip_grad_norm(
+            model.parameters(),
+            1.0,
+        )
         opt.step()
         #adding scheduler here also
         scheduler.step()
