@@ -57,15 +57,7 @@ def main():
     assert n <= MAX_PARAMS, f"cap: max {MAX_PARAMS:,} params"
 
     # baseline choices, all questionable on purpose:
-    #opt = torch.optim.Adam(model.parameters(), lr=args.lr)  # constant LR,
-    
-    #changing the optimizer here to AdamW
-    opt = torch.optim.AdamW(
-    model.parameters(),
-    lr=args.lr,
-    betas=(0.9, 0.95),
-    weight_decay=0.01,
-    )
+    opt = torch.optim.Adam(model.parameters(), lr=args.lr)  # constant LR,
     # no warmup, no schedule, no weight decay, no gradient clipping.
 
     model.train()
