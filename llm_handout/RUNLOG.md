@@ -44,7 +44,7 @@ Results found:
 - Time: 67 seconds
 
 ## Experiment 5A (BPE vocab size=384)
-- checking if a smaller BPE apart from our standard 512 BPE is improving the LLM or not
+- checking if a smaller BPE apart from our standard 256 BPE is improving the LLM or not
 - retianed the BPE made in experiment 4. But generated a new bpe_merges.json file with bpe vocab size equal to 384
 Results found:
 - Parameters: 1380800
@@ -53,7 +53,7 @@ Results found:
 - Time: 73 seconds
 
 ## Experiment 5B (BPE vocab size=768)
-- checking if increasing the BPE count apart from our standard 512 bpe is improving the llm or not
+- checking if increasing the BPE count apart from our standard 256 bpe is improving the llm or not
 - retaiend the BPE made in experiment 4. generated a new bpe_merges.json with bpe vocab size equal to 786
 Results found:
 - Parameters: 1509440
